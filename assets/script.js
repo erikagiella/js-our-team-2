@@ -39,11 +39,19 @@ const teamMembers = [
 
 
 //seleziono il nodo DOM 
-const ulEl = document.getElementById("list")
+const memberListEl = document.getElementById("memberList")
+
+
+
 //ciclo gli elementi dell'array con un ciclo for
 for (let i = 0; i < teamMembers.length; i++) {
   //seleziono l'elemento dell'array utilizzando i come indice
   const member = teamMembers[i];
+  //creo le variabili a cui attribuire il valore delle proprietà dell'oggetto 
+  const memberName = member.name;
+  const memberRole = member.role;
+  const memberEmail = member.email;
+  const memberImg = member.img;
   //creo un nuovo elemento lista usando le API del DOM
   const liEl = document.createElement("li")
   //inserisco il testo nell'elemento lista
