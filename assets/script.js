@@ -36,3 +36,18 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+
+//seleziono il nodo DOM 
+const ulEl = document.getElementById("list")
+//ciclo gli elementi dell'array con un ciclo for
+for (let i = 0; i < teamMembers.length; i++) {
+  //seleziono l'elemento dell'array utilizzando i come indice
+  const member = teamMembers[i];
+  //creo un nuovo elemento lista usando le API del DOM
+  const liEl = document.createElement("li")
+  //inserisco il testo nell'elemento lista
+  liEl.append(member.name);
+  //aggiungo l'elemento lista all'ul
+  ulEl.appendChild(liEl);
+}
