@@ -58,17 +58,9 @@ for (let i = 0; i < teamMembers.length; i++) {
   //aggiungo al div le classi col
   colEl.classList.add("col-12", "col-md-6", "col-lg-4");
 
-  //creo l'elemento card in cui riempio i vari campi con le variabili 
-  const cardHTML = `
-    <div class="card border-0">
-      <img class="card-img rounded-circle" src="./assets/${memberImg}" alt="">
-      <div class="card-body text-center">
-        <div class="memberName">${memberName}</div>
-        <div class="memberRole">${memberRole}</div>
-        <div class="memberEmail">${memberEmail}</div>
-      </div>
-    </div>  
-  `
+  //creo l'elemento card utilizzando l'apposita funzione
+  const cardHTML = createCardText(memberName, memberRole, memberEmail, memberImg);
+
   //inserisco il testo nell'elemento col
   colEl.innerHTML = cardHTML;
 
