@@ -39,7 +39,7 @@ const teamMembers = [
 
 
 //seleziono il nodo DOM 
-const memberListEl = document.getElementById("memberList")
+const membersListEl = document.getElementById("membersList")
 
 
 
@@ -47,15 +47,31 @@ const memberListEl = document.getElementById("memberList")
 for (let i = 0; i < teamMembers.length; i++) {
   //seleziono l'elemento dell'array utilizzando i come indice
   const member = teamMembers[i];
-  //creo le variabili a cui attribuire il valore delle proprietà dell'oggetto 
+  //creo le variabili a cui attribuire il valore delle proprietà dell'oggetto membro
   const memberName = member.name;
   const memberRole = member.role;
   const memberEmail = member.email;
   const memberImg = member.img;
-  //creo un nuovo elemento lista usando le API del DOM
-  const liEl = document.createElement("li")
-  //inserisco il testo nell'elemento lista
-  liEl.append(member.name);
-  //aggiungo l'elemento lista all'ul
-  ulEl.appendChild(liEl);
+  //creo un nuovo elemento div usando le API del DOM
+  const colEl = document.createElement("div")
+
+  //aggiungo al div le classi col
+  colEl.classList.add("col-12", "col-md-6", "col-lg-4");
+
+  //creo l'elemento card in cui riempio i vari campi con le variabili 
+  const cardHTML = `
+    <div class="card border-0">
+      <img class="card-img rounded-circle" src="./assets/${memberImg}" alt="">
+      <div class="card-body text-center">
+        <div class="memberName">${memberName}</div>
+        <div class="memberRole">${memberRole}</div>
+        <div class="memberEmail">${memberEmail}</div>
+      </div>
+    </div>  
+  `
+  //inserisco il testo nell'elemento col
+  colEl.innerHTML = cardHTML;
+
+  //aggiungo l'elemento col come nodo del DOM alla lista (nodo row)
+  membersListEl.appendChild(colEl);
 }
