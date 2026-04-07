@@ -36,22 +36,25 @@
             <section>
                 <div class="container">
                     <h2 class="display-6 text-center mb-4">Aggiungi un membro del team</h2>
-                    <div class="mb-3">
-                        <label for="nameField" class="form-label">Nome e Cognome</label>
-                        <input type="text" class="form-control" id="nameField" placeholder="Inserisci nome e cognome">
+                    <div class="row">
+                        <div class="col">
+                            <label for="name">Nome e Cognome</label>
+                            <input type="text" id="nameField" placeholder="Inserisci nome e cognome">
+                        </div>
+                        <div class="col">
+                            <label for="roleField">Ruolo</label>
+                            <input type="text" id="roleField" placeholder="Ruolo">
+                        </div>
+                        <div class="col">
+                            <label for="emailField">Indirizzo Email</label>
+                            <input type="email" id="emailField" placeholder="name@example.com">
+                        </div>
+                        <div class="col">
+                            <label for="memberPicField">Foto profilo</label>
+                            <input type="url" id="imgField" placeholder="">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="roleField" class="form-label">Ruolo</label>
-                        <input type="text" class="form-control" id="roleField" placeholder="Ruolo">
-                    </div>
-                    <div class="mb-3">
-                        <label for="emailField" class="form-label">Indirizzo Email</label>
-                        <input type="email" class="form-control" id="emailField" placeholder="name@example.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="memberPicField" class="form-label">Foto profilo</label>
-                        <input type="url" class="form-control" id="memberPicField" placeholder="name@example.com">
-                    </div>
+
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Aggiungi nuovo membro</button>
                     </div>
@@ -60,7 +63,7 @@
             <!--Our Team-->
             <section class="py-5">
                 <div class="container">
-                    <h2 class="display-6 text-center mb-4">Il team al completo</h2>
+                    <h2 class="display-6 text-center mb-5">Il team al completo</h2>
                     <div id="membersList" class="row g-4">
 
                     </div>
